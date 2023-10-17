@@ -1,0 +1,206 @@
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Imports
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+@import 'vars';
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Generals
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+*,
+html,
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: $primary-font;
+}
+
+body {
+    display: grid;
+    grid-template-columns: 1fr;
+
+    p {
+        font-size: 15px;
+    }
+}
+
+.App {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    place-items: center;
+    padding: 30px;
+    min-height: 100vh;
+    height: 100vh;
+    max-height: 100vh;
+    background-color: $very-dark-blue;
+
+    &__content {
+        padding: 20px;
+        width: 100%;
+        border-radius: 20px;
+        background-color: $dark-blue;
+
+        &__step1 {
+            display: flex;
+            flex-direction: column;
+
+            &__header {
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                padding: .6rem;
+                width: 35px;
+                height: 35px;
+                border-radius: 50%;
+                box-shadow: 0 0 10px rgba($color: #000000, $alpha: .2);
+                background-color: $dark-blue;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+
+            &__main {
+                display: flex;
+                flex-direction: column;
+
+                h1 {
+                    margin: 1rem 0;
+                    color: $white;
+                    font-size: 1.8rem;
+                }
+
+                p {
+                    color: $light-grey;
+                    line-height: 1.5em;
+                    font-size: 1.2rem;
+                }
+
+                &__list {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    list-style: none;
+                    margin: 2rem 0;
+
+                    li {
+                        cursor: pointer;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        width: 40px;
+                        height: 40px;
+                        border-radius: 50%;
+
+                        button {
+                            cursor: pointer;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            width: 40px;
+                            height: 40px;
+                            color: $medium-grey;
+                            border: none;
+                            border-radius: 50%;
+                            font-size: 1rem;
+                            font-weight: 700;
+                            background-color: rgba($color: $very-dark-blue, $alpha: .2);
+
+                            &:hover {
+                                color: $white;
+                                background-color: $orange;
+                            }
+                        }
+
+                        .selected {
+                            color: $white;
+                            background-color: $medium-grey;
+                        }
+                    }
+                }
+
+                button {
+                    cursor: pointer;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    margin-bottom: 1rem;
+                    width: 100%;
+                    height: 50px;
+                    color: $white;
+                    border: none;
+                    border-radius: 50px;
+                    font-size: 1.5rem;
+                    font-weight: 700;
+                    background-color: $orange;
+                    transition: all .25s ease-in-out;
+
+                    &:hover {
+                        color: $orange;
+                        background-color: $white;
+                    }
+                }
+            }
+        }
+
+        &__step2 {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            &__header {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+
+                p {
+                    margin: 2rem 0;
+                    padding: .5rem 1rem;
+                    color: $orange;
+                    text-align: center;
+                    border-radius: 50px;
+                    font-size: 1.1rem;
+                    background-color: rgba($color: $medium-grey, $alpha: .15);
+
+                    span {
+                        text-decoration: 2px underline $orange;
+                        text-underline-offset: 4px;
+                        font-weight: 700;
+                    }
+                }
+            }
+
+            &__main {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+
+                h1 {
+                    margin-bottom: 1rem;
+                    color: $white;
+                    font-size: 2rem;
+                }
+
+                p {
+                    color: $light-grey;
+                    line-height: 1.5em;
+                    font-size: 1rem;
+                }
+            }
+        }
+    }
+}
